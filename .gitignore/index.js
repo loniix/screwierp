@@ -60,6 +60,12 @@ client.on('message', msg => {
   }
 });
 
+client.on('message', msg => {
+  if (msg.content === 'Screwie ? Bouton !') {
+    msg.reply('Intialisation : Oh oui. *Screwie appuie sur le bouton et remet le temps en place.*');
+  }
+});
+
 client.on('guildMemberAdd', member => {
   console.log('Trouvé !');
   const channel = member.guild.channels.find('name', 'bienvenue');
