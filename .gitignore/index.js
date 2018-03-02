@@ -50,7 +50,7 @@ client.on('message', msg => {
 
 client.on('message', msg => {
   if (msg.content === 'Le corbeau est brûlé.') {
-    msg.reply('Exécution : Screwie > Chiss Lambda.');
+    msg.reply('Exécution : Screwie > Detenaï.');
   }
 });
 
