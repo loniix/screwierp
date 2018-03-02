@@ -66,6 +66,12 @@ client.on('message', msg => {
   }
 });
 
+client.on('message', msg => {
+  if (msg.content === 'Screwie ?') {
+    msg.reply('Non.');
+  }
+});
+
 client.on('guildMemberAdd', member => {
   console.log('Trouvé !');
   const channel = member.guild.channels.find('name', 'bienvenue');
