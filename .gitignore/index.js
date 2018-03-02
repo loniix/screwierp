@@ -8,19 +8,55 @@ client.on('ready', () => {
 
 client.on('message', msg => {
   if (msg.content === 'Bonjour') {
-    msg.reply('Salutations.');
+    msg.send('Salutations.');
   }
 });
 
 client.on('message', msg => {
-  if (msg.content === 'Comment allez-vous') {
-    msg.reply('Parfait. Et vous ?');
+  if (msg.content === 'Comment allez-vous ?') {
+    msg.send('Parfait. Et vous ?');
   }
 });
 
 client.on('message', msg => {
-  if (msg.content === 'Pub') {
-    msg.reply('Vous souhaitez faire de la pub ? Tenez https://discord.gg/3FMGSfR.');
+  if (msg.content === 'Ca va ?') {
+    msg.send('En pleine forme ! Et vous ?');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'Hein, Screwie ?') {
+    msg.send('Tout à fait, professeur.');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'Bonsoir') {
+    msg.send('Bonjour ! Marrant, pas vrai ?');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'Code C-137 Cornichon') {
+    msg.send('Exécution : Cody est un con. Oops, je me suis trompé.');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'Hey') {
+    msg.send('Bonjour ! Comment vous-sentez-vous ?');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'Le corbeau est brûlé.') {
+    msg.send('Exécution : Screwie > Detenaï.');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'Pancake du matin.') {
+    msg.send('Intialisation : Bonjour, Professeur.');
   }
 });
 
