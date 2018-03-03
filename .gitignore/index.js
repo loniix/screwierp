@@ -79,11 +79,5 @@ client.on('guildMemberAdd', member => {
   console.log('Trouvé 2 !');
   channel.reply(`Bienvenue sur **The Old Republic RP**, ${member}. Je suis **Screwie**, droïde astromech du **créateur** et je vous accompagnerais partout ! Vous devez commencer par lire tous les salons de la catégorie **Informations** avant de vous lancer !`);
 });
-
-client.on('guildMemberAdd', member => {
-  console.log('User' + member.user.username + 'a rejoint le serveur')
-  var role = member.guild.roles.find('name','Arrivant');
-  member.addRole(role)
-
   
 client.login("NDE5MTIxNjYwMTM4ODgxMDI0.DXrnDA.IipiPeIIY8pBs47ypk53WMoqPxk");
