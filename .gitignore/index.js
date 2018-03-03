@@ -80,4 +80,7 @@ client.on('guildMemberAdd', member => {
   channel.reply(`Bienvenue sur **The Old Republic RP**, ${member}. Je suis **Screwie**, droïde astromech du **créateur** et je vous accompagnerais partout ! Vous devez commencer par lire tous les salons de la catégorie **Informations** avant de vous lancer !`);
 });
   
+client.user.setStatus('Online')
+client.user.setPresence({game : { name : 'aider le Professeur', type: 0}})
+
 client.login("NDE5MTIxNjYwMTM4ODgxMDI0.DXrnDA.IipiPeIIY8pBs47ypk53WMoqPxk");
