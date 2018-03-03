@@ -82,7 +82,7 @@ client.on('guildMemberAdd', member => {
 
 client.on('guildMemberAdd', member => {
   console.log('User' + member.user.username + 'a rejoint le serveur')
-  var role = member.guild.roles.find('name','Arrivant 🚶');
+  var role = member.guild.roles.find('name','Arrivant');
   member.addRole(role)
 
   
