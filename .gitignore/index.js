@@ -2,9 +2,6 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const db = require('quick.db');
 
-client.user.setStatus('Online')
-client.user.setPresence({game : { name : 'aider le Professeur', type: 0}})
-
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
@@ -100,6 +97,10 @@ if(!prefixes[message.guild.id]){
 
 let prefix = prefixes[message.guild.id].prefixes;
 console.log(prefix);
+
+// Indicateur de présence de Screwie
+client.user.setStatus('Online')
+client.user.setPresence({game : { name : 'aider le Professeur', type: 0}})
 
 // Token du BOT
 client.login("NDE5MTIxNjYwMTM4ODgxMDI0.DXrnDA.IipiPeIIY8pBs47ypk53WMoqPxk");
