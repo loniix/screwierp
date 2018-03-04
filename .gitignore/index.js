@@ -1,13 +1,16 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const db = require('quick.db');
+
+client.user.setStatus('Online')
+client.user.setPresence({game : { name : 'aider le Professeur', type: 0}})
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setStatus('Online')
-  client.user.setPresence({ game: { name: 'aider le professeur', type: 0 } })
 });
 
 
+// Toutes les réponses automatiques du chatbot.
 client.on('message', msg => {
   if (msg.content === 'Bonjour') {
     msg.reply('Salutations.');
@@ -73,7 +76,9 @@ client.on('message', msg => {
     msg.reply('Non.');
   }
 });
+// Fin des réponses automatiques du chatbot.
 
+// Message de bienvenue
 client.on('guildMemberAdd', member => {
   console.log('Trouvé !');
   const channel = member.guild.channels.find('name', 'bienvenue');
@@ -82,10 +87,19 @@ client.on('guildMemberAdd', member => {
   channel.reply(`Bienvenue sur **The Old Republic RP**, ${member}. Je suis **Screwie**, droïde astromech du **créateur** et je vous accompagnerais partout ! Vous devez commencer par lire tous les salons de la catégorie **Informations** avant de vous lancer !`);
 });
 
-client.on('guildMemberAdd', member => {
-  console.log('User' + member.user.username + 'a rejoint le serveur')
-  var role = member.guild.roles.find('name','Arrivant');
-  member.addRole(role)
-});
 
+
+
+// Création d'un préfixe de commande
+let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
+if(!prefixes[message.guild.id]){
+  prefixes[message.guild.id] = {
+    prefixes: botconfig.prefix
+  };
+}
+
+let prefix = prefixes[message.guild.id].prefixes;
+console.log(prefix);
+
+// Token du BOT
 client.login("NDE5MTIxNjYwMTM4ODgxMDI0.DXrnDA.IipiPeIIY8pBs47ypk53WMoqPxk");
